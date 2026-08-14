@@ -1,5 +1,7 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import "./Game.css"
+import { FaHeart } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Game = ({ 
   verifyLetter,
@@ -12,11 +14,16 @@ const Game = ({
    score,
 }) => {
   const[letter, setLetter] = useState("");
+  const letterInputRef = useRef(null)
 
   const handleSubmit = (e) => {
     e.preventDefault();
   
     verifyLetter(letter);
+
+    setLetter("");
+
+    letterInputRef.current.focus();
   };
 
   return (
@@ -28,13 +35,38 @@ const Game = ({
       <h3 className="tip" >
         Dica sobre a palava: <span>{pickedCategory}</span>
       </h3>
-      <p>Voce ainda tem {guesses} tentativa(s).</p>
+      <p className="guesses">
+        {Array.from({ length: guesses }).map((_, index) => (
+          <FaHeart
+            key={index}
+            color="#ef4444"
+            size={22}
+          />
+        ))}
+      </p>
       <div className="wordContainer">
          {letters.map((letter, i) => 
           guessedLetters.includes(letter) ? (
-            <span key={i} className="letter">
+            <motion.span
+              key={i}
+              className="letter"
+              initial={{
+                rotateX: 180,
+                scale: 0.5,
+                opacity: 0,
+              }}
+              animate={{
+                rotateX: 0,
+                scale: 1,
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: i * 0.1,
+              }}
+            >
               {letter}
-            </span>
+            </motion.span>
           ) : (
             <span key={i} className="blankSquare"></span>  
           )
@@ -50,6 +82,7 @@ const Game = ({
            required  
            onChange={(e) => setLetter(e.target.value)}
            value={letter}
+           ref={letterInputRef}
            />
           <button>Jogar!</button>
         </form>    

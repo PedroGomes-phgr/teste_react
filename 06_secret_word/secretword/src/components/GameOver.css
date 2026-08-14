@@ -1,4 +1,31 @@
-h2 span {
-    color: #ecfa00;
-    font-size: 1.5em;
+.game-over {
+  width: 100%;
+  max-width: 800px;
+
+  background: rgba(255,255,255,.05);
+
+  backdrop-filter: blur(15px);
+
+  border-radius: 30px;
+
+  padding: 4rem;
+
+  box-shadow:
+    0 25px 50px rgba(0,0,0,.35);
+}
+
+.game-over h1 {
+  font-size: 4rem;
+
+  margin-bottom: 1rem;
+}
+
+.game-over h2 {
+  margin-bottom: 2rem;
+}
+
+.game-over h2 span {
+  color: #facc15;
+
+  font-size: 2.2rem;
 }
