@@ -1,0 +1,55 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Camisa",
+      "price": 59.9
+    },
+    {
+      "id": "2",
+      "name": "Calça vermelha",
+      "price": 90
+    },
+    {
+      "id": "3",
+      "name": "Boné aba reta",
+      "price": 29.9
+    },
+    {
+      "name": "pedro",
+      "price": "50.60",
+      "id": "zr0dWvt"
+    },
+    {
+      "name": "pedro",
+      "price": "50.6",
+      "id": "cTMDLjz"
+    },
+    {
+      "name": "pedro",
+      "price": "50.600",
+      "id": "VW9hsIn"
+    },
+    {
+      "name": "ioioio",
+      "price": "9",
+      "id": "2EMUho8"
+    },
+    {
+      "name": "oedrk",
+      "price": "32",
+      "id": "IcUQ0aV"
+    },
+    {
+      "name": "oedrk",
+      "price": "32",
+      "id": "bSGEIf2"
+    },
+    {
+      "name": "mouse",
+      "price": "600",
+      "id": "cEAuJ9r"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
